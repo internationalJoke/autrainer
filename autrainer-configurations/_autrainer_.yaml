@@ -4,7 +4,8 @@ defaults:
   - model: ???
   - optimizer: ???
   - scheduler: None
-  - augmentation: None
+  - augmentation@train_augmentation: None
+  - augmentation@test_augmentation: None
   - plotting: Default
   - override hydra/sweeper: autrainer_filter_sweeper
 
@@ -35,5 +36,6 @@ hydra:
       ${training_type}_\
       ${iterations}_\
       ${scheduler.id}_\
-      ${augmentation.id}_\
+      ${train_augmentation.id}_\
+      ${test_augmentation.id}_\
       ${seed}"

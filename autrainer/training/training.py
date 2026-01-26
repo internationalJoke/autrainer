@@ -76,7 +76,11 @@ class ModularTaskTrainer:
         model_config = self.cfg.model
         dataset_config = self.cfg.dataset
 
-        augmentation_manager = AugmentationManager(self.cfg.augmentation)
+        augmentation_manager = AugmentationManager(
+            train_augmentation=self.cfg.train_augmentation,
+            dev_augmentation=self.cfg.train_augmentation,
+            test_augmentation=self.cfg.test_augmentation,
+        )
         train_aug, dev_aug, test_aug = augmentation_manager.get_augmentations()
 
         transform_manager = TransformManager(
