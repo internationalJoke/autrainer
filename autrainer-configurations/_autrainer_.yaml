@@ -37,5 +37,4 @@ hydra:
       ${iterations}_\
       ${scheduler.id}_\
       ${train_augmentation.id}_\
-      ${test_augmentation.id}_\
       ${seed}"
